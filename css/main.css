@@ -291,6 +291,70 @@ h2 {
   margin: 25px 0 60px 0;
 }
 
+.reviews-section {
+  height: 205vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.reviews-section .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+}
+
+.reviews-section .comment {
+  font-size: 1.35em;
+  font-family: "barlow";
+  color: hsl(213, 9%, 39%);
+  line-height: 40px;
+  margin: 25px 0 40px 0;
+}
+
+.profile {
+  border-radius: 100px;
+  height: 100px;
+  margin-top: 80px;
+}
+
+.reviews-section h3 {
+  font-family: "Fraunces";
+  letter-spacing: 5px;
+  font-size: 1.3em;
+  color: hsl(210, 4%, 67%);
+}
+
+.name {
+  color: hsl(212, 27%, 19%);
+  font-family: "Fraunces";
+  font-size: 1.3em;
+}
+
+.title {
+  color: hsl(210, 4%, 67%);
+  font-family: "Barlow";
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
