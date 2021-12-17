@@ -102,7 +102,6 @@ header a {
 }
 
 nav {
-  overflow: hidden;
   background-color: none;
   position: relative;
   justify-content: space-between;
@@ -111,34 +110,64 @@ nav {
 nav ul {
   display: none;
   position: absolute;
-  top: 20px;
-  right: 100px;
+  top: 125px;
+  right: 40px;
+  background-color: white;
+  width: 85%;
+  height: 30em;
+  padding-top: 40px;
+}
+
+ul::before {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  transform: skew(0, 120deg);
+  right: 0;
 }
 
 li {
   list-style: none;
-  color: white;
+  text-align: center;
 }
 
-nav a {
+nav li a {
   padding: 14px 16px;
-  font-size: 17px;
+  font-size: 2em;
   display: block;
+  font-family: "Barlow";
+  color: rgb(167, 164, 164);
+  margin-top: 20px;
+}
+
+nav li .contact {
+  background-color: yellow;
+  color: #000;
+  font-family: "Fraunces";
+  border-radius: 50px;
+  width: 220px;
+  height: 60px;
+  font-size: 1.5em;
+  margin: 30px auto 0 auto;
 }
 
 h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   position: relative;
   margin-right: 300px;
-  font-size: 28px;
+  font-size: 2em;
+  display: block;
   font-weight: 900;
   letter-spacing: -1px;
+  padding: 30px 32px;
 }
 
 .menu-btn {
   display: block;
   position: absolute;
-  right: 30px;
+  right: 40px;
   top: 40px;
   width: 30px;
 }
@@ -147,18 +176,27 @@ header {
   background: url("/img/mobile/image-header.jpg");
   height: 100vh;
   width: 100vw;
-  background-size: cover;
-  background-position: bottom;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
+  margin-top: -23px;
 }
 
 h2 {
   text-align: center;
   font-family: "Fraunces";
-  font-size: 3.2em;
-  letter-spacing: 6px;
+  font-size: 3.5em;
+  letter-spacing: 10px;
   color: white;
-  margin-top: 10px;
+  margin-top: 30px;
+}
+
+.arrow {
+  text-align: center;
+  margin: 63px;
+}
+
+.arrow img {
+  height: 160px;
 }
 
 .header-content {
@@ -215,6 +253,30 @@ h2 {
   font-family: "Fraunces";
   font-size: 1.1em;
   letter-spacing: 1px;
+}
+
+.transform a::after {
+  content: "";
+  position: absolute;
+  left: 169px;
+  top: 1515px;
+  height: 14px;
+  width: 32%;
+  background-color: hsl(51, 100%, 49%);
+  opacity: 0.2;
+  border-radius: 30%;
+}
+
+.stand-out a::after {
+  content: "";
+  position: absolute;
+  left: 169px;
+  top: 2392px;
+  height: 14px;
+  width: 32%;
+  background-color: hsl(7, 99%, 70%);
+  opacity: 0.2;
+  border-radius: 30%;
 }
 
 .cup {
