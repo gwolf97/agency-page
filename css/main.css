@@ -92,6 +92,10 @@ textarea {
   box-sizing: border-box;
 }
 
+.desktop {
+  display: none;
+}
+
 body {
   background-color: #fff;
 }
@@ -107,7 +111,11 @@ nav {
   justify-content: space-between;
 }
 
-nav ul {
+.desktop-nav {
+  display: none;
+}
+
+.mobile-nav {
   display: none;
   position: absolute;
   top: 125px;
@@ -118,7 +126,7 @@ nav ul {
   padding-top: 40px;
 }
 
-ul::before {
+.mobile-nav::before {
   position: absolute;
   content: "";
   width: 100px;
@@ -128,12 +136,12 @@ ul::before {
   right: 0;
 }
 
-li {
+.mobile-nav li {
   list-style: none;
   text-align: center;
 }
 
-nav li a {
+.mobile-nav li a {
   padding: 14px 16px;
   font-size: 2em;
   display: block;
@@ -142,7 +150,7 @@ nav li a {
   margin-top: 20px;
 }
 
-nav li .contact {
+.mobile-nav li .contact {
   background-color: yellow;
   color: #000;
   font-family: "Fraunces";
@@ -173,10 +181,11 @@ h1 {
 }
 
 header {
-  background: url("/img/mobile/image-header.jpg");
+  background: url("/img/desktop/image-header.jpg");
   height: 100vh;
   width: 100vw;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
   margin-top: -23px;
 }
@@ -192,11 +201,11 @@ h2 {
 
 .arrow {
   text-align: center;
-  margin: 63px;
+  margin: 26px;
 }
 
 .arrow img {
-  height: 160px;
+  height: 140px;
 }
 
 .header-content {
@@ -207,7 +216,8 @@ h2 {
   align-items: center;
 }
 
-.egg {
+.egg-mobile,
+.cup-mobile {
   width: 100vw;
 }
 
@@ -253,30 +263,31 @@ h2 {
   font-family: "Fraunces";
   font-size: 1.1em;
   letter-spacing: 1px;
+  z-index: 1;
 }
 
-.transform a::after {
+.transform a:hover + .highlight,
+.stand-out a:hover + .highlight {
+  opacity: 0.5;
+}
+
+.highlight {
   content: "";
-  position: absolute;
-  left: 169px;
-  top: 1515px;
-  height: 14px;
-  width: 32%;
+  height: 1em;
+  width: 9.5em;
   background-color: hsl(51, 100%, 49%);
   opacity: 0.2;
   border-radius: 30%;
+  margin-top: -12px;
+  cursor: pointer;
 }
 
-.stand-out a::after {
-  content: "";
-  position: absolute;
-  left: 169px;
-  top: 2392px;
-  height: 14px;
-  width: 32%;
+.highlight:hover {
+  opacity: 0.5;
+}
+
+.red {
   background-color: hsl(7, 99%, 70%);
-  opacity: 0.2;
-  border-radius: 30%;
 }
 
 .cup {
@@ -285,8 +296,8 @@ h2 {
 
 .graphic {
   background: url(/img/mobile/image-graphic-design.jpg);
-  background-position: top;
   background-size: cover;
+  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -320,8 +331,9 @@ h2 {
 
 .photography {
   background: url(/img/mobile/image-photography.jpg);
-  background-position: top;
+
   background-size: cover;
+  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -544,8 +556,202 @@ footer .socials img {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+@media only screen and (min-width: 620px) {
+  .graphic,
+  .photography {
+    height: 120vh;
+    transition: all 1 ease;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .mobile-nav {
+    opacity: 0;
+  }
+  .mobile-nav::before {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+    position: absolute;
+    right: 3em;
+    top: 2.6em;
+  }
+
+  .desktop-nav li {
+    list-style: none;
+    margin: 0 1.3rem;
+    font-size: 1.2em;
+    font-family: "Barlow";
+  }
+
+  .desktop-nav .contact {
+    font-family: "Fraunces";
+    border-radius: 50px;
+    background-color: #fff;
+    height: 3em;
+    width: 8.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -14px;
+    cursor: pointer;
+  }
+
+  .desktop-nav .contact a {
+    color: #000;
+    font-size: 1em;
+  }
+
+  .desktop-nav .contact:hover {
+    background-color: rgb(139, 220, 245);
+  }
+
+  .desktop-nav .contact:hover a {
+    color: #fff;
+  }
+
+  h2 br {
+    display: none;
+  }
+
+  h2 {
+    margin-top: 50px;
+  }
+
+  .arrow {
+    margin-top: 85px;
+  }
+
+  header {
+    background: url(/img/desktop/image-header.jpg);
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .egg-desktop,
+  .cup-desktop,
+  .transform,
+  .stand-out {
+    width: 50vw;
+    height: 100%;
+  }
+
+  .egg-desktop,
+  .cup-desktop {
+    object-fit: cover;
+  }
+
+  .transform {
+    width: 50%;
+  }
+
+  .desktop-section-1 {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .desktop-section-2 {
+    display: flex;
+  }
+
+  .transform .content-wrapper,
+  .stand-out .content-wrapper {
+    text-align: left;
+    width: 67%;
+    align-items: flex-start;
+  }
+  .stand-out .content-wrapper {
+    width: 80%;
+  }
+  .stand-out .content-wrapper p {
+    width: 90%;
+  }
+
+  .highlight {
+    margin: -12px 0 0 -10px;
+  }
+
+  .desktop-section-3 {
+    display: flex;
+  }
+
+  .graphic {
+    background: url(/img/desktop/image-graphic-design.jpg);
+    background-size: cover;
+    background-position: top center;
+    width: 50%;
+    height: 100vh;
+  }
+
+  .photography {
+    width: 50%;
+    background: url(/img/desktop/image-photography.jpg);
+    background-size: cover;
+    background-position: top center;
+    height: 100vh;
+  }
+
+  .photography .content,
+  .graphic .content {
+    width: 75%;
+  }
+
+  .photography .content p,
+  .graphic .content p {
+    width: 78%;
+  }
+
+  .reviews-section {
+    height: 100%;
+  }
+
+  .reviews-section h3 {
+    margin-top: 100px;
+  }
+
+  .reviews-section .reviews {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+  }
+
+  .reviews-section .review {
+    margin: 0 25px;
+    width: 25%;
+  }
+
+  .reviews-section .comment {
+    height: 35vh;
+    width: 100%;
+    font-size: 2.2vmin;
+  }
+
+  .title {
+    margin-bottom: 10vw;
+  }
+
+  .gallery {
+    flex-wrap: nowrap;
+  }
+
+  .gallery img {
+    width: 25%;
+  }
 }
 
 @media print,
